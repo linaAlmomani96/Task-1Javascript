@@ -123,7 +123,11 @@
          tr.remove();
          }
         function sendEmail(){
-            // debugger;
+            debugger;
+            let email = document.getElementById('txtTo').value;
+            let subject = document.getElementById('txtSubject').value;
+            if(email.length !=0 && subject.length !=0)
+            {
             let tbl = document.getElementById('tblSent')
             let tr = document.createElement('tr');
 
@@ -134,13 +138,11 @@
             tr.appendChild(td1);
             
             let td2 = document.createElement('td');
-            let email = document.getElementById('txtTo').value;
             let td2_val = document.createTextNode(email);
             td2.appendChild(td2_val);
             tr.appendChild(td2);
 
             let td3 = document.createElement('td');
-            let subject = document.getElementById('txtSubject');
             let td3_val = document.createTextNode(subject);
             td3.appendChild(td3_val);
             tr.appendChild(td3);
@@ -151,7 +153,10 @@
             td4.appendChild(td4_val);
             tr.appendChild(td4);
 
-            tbl.appendChild(tr);
+            tbl.appendChild(tr);}
+
+            else
+            document.getElementsByClassName('ButtonSubmit').disabled = true;
 
         }
 
@@ -363,5 +368,6 @@
 
         </div>
     </div>
+
     </body>
 </html>
